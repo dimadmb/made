@@ -3,217 +3,110 @@
 {% block classMain %} banmain {% endblock %}
 {% block mainPage %} main-page {% endblock %}
 
-{% block headSearch %}
-	<div class="head-search">
-		<div class="container">
-			<div class="row">
-				{{ form_start(form, {'attr':{'class':'search-main', 'action':path('cruises')}}) }}
-					<div class="col-md-3">
-						{{ form_widget(form.months, {'attr':{'class':'chosen-select'}} ) }}
-					</div>
-					<div class="col-md-3">
-						{{ form_widget(form.citys, {'attr':{'class':'chosen-select'}} ) }}
-					</div>
-					<div class="col-md-3">
-						{{ form_widget(form.days, {'attr':{'class':'chosen-select'}} ) }}
-					</div>
-					<div class="col-md-3 search-submit-box">
-						{{ form_widget(form.submit,{'label': 'ПОИСК'}) }}
-					</div>
-					
-				{{ form_end(form) }}
-			</div>
-		</div>
-	</div>
-	<div class="head-search">
-		<div class="container">
-			<div class="row">
-
-
-
-				
-			</div>
-		</div>
-	</div>
-{% endblock %}
-
 {% block body %}
-
-
 
 <div class="container">
 <div class="row">
-<div class="col-md-6">
-<div class="block main-fleet">
-<h2>Флот</h2>
 
-<div class="row">
-	
-	{{ render(controller('CruiseBundle:Ship:getShips')) }}
-</div>
-
-
-<!--
-<div class="row">
-<div class="col-xs-6"><a class="main-ship-li" href="#">Нижний Новгород<span> 301</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Александр Радищев<span> 301</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Феликс Дзержинский<span> 92-016</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Мстислав Ростропович<span> 92-016</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Александр Пушкин<span> Q-040</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Константин Симонов<span> 302</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Николай Чернышевский<span> 301</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Лев Толстой<span> Q-056</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Константин Федин<span> 301</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Максим Горький<span> Q-040</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Зосима Шашков<span> 302</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Русь<span> 302</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Ленин<span> 302</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Георгий Чичерин<span> 302</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Александр Суворов<span> 92-016</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Виссарион Белинский<span> 301</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Кронштадт<span> 301</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Леонид Соболев<span> 302</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Санкт-Петербург<span> 301</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Юрий Андропов<span> 302</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Георгий Жуков<span> 92-016</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Михаил Фрунзе<span> 92-016</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Константин Коротков<span> 301</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Семен Будённый<span> 92-016</span></a></div>
-<div class="col-xs-6"><a class="main-ship-li" href="#">Сергей Кучкин<span> 92-016</span></a></div>
-</div>
--->
-
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="block main-banner">
-<h2>Круизы в Карелию</h2>
-
-<div class="button-holder"><a class="btn btn-contred">ВЫБРАТЬ</a></div>
-</div>
-</div>
-</div>
-
-		<div class="row">
-			<div class="col-md-6">
-				{{render(controller('CruiseBundle:Cruise:nearestCruises',{'count':3}))}}
-			</div>
-			<div class="col-md-6">
-				<div class="block">
-					<h2>Новости компании</h2>
-					<div class="main-news-li">
-						<div class="news-date">26.08.16</div>
-						<div class="news-announce">Акция «Успей купить»! Круизы на теплоходах «Константин Коротков», «Нижний Новгород», «Михаил Фрунзе» со скидкой 20%!</div>
-					</div>
-					<div class="main-news-li">
-						<div class="news-date">26.08.16</div>
-						<div class="news-announce">Акция «Успей купить»! Круизы на теплоходах «Константин Коротков», «Нижний Новгород», «Михаил Фрунзе» со скидкой 20%!</div>
-					</div>
-					<div class="main-news-li">
-						<div class="news-date">26.08.16</div>
-						<div class="news-announce">Акция «Успей купить»! Круизы на теплоходах «Константин Коротков», «Нижний Новгород», «Михаил Фрунзе» со скидкой 20%!</div>
-					</div>
-					<div class="button-holder">
-						<a class="btn btn-contbl">РАНЕЕ</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row hidden-xs">
-			<div class="col-md-12">
-				<div class="block main-slider">
-					<div class="owl-carousel">
-						<div class="main-slide" style="background-image: url({{asset('images/slide1.jpg')}});">
-							<div class="banner-header">ОТКРЫТИЕ ПРОДАЖ</div><br />
-							<div class="banner-header hdr-100">2017</div>
-							<div class="button-holder"><a class="btn btn-contbl">ПОДРОБНЕЕ</a></div>
-						</div>
-						<div class="main-slide" style="background-image: url({{asset('images/slide1.jpg')}});">
-							<div class="banner-header">ОТКРЫТИЕ ПРОДАЖ</div><br />
-							<div class="banner-header hdr-100">2017</div>
-							<div class="button-holder"><a class="btn btn-contbl">ПОДРОБНЕЕ</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-<div class="row">
-<div class="col-md-6">
-<div class="block">
-<h2>Клуб Водоходъ</h2>
-
-<div class="main-club-li">
-<h4>Форумы</h4>
-
-<p>Расписания, Теплоходы, Работа компании, Прогулочный флот, Общение</p>
-</div>
-
-<div class="main-club-li">
-<h4>Конкурсы</h4>
-
-<p>Фотоконкурс 2016, Правила, Фотоконкурс 2014, Фотоконкурс 2013</p>
-</div>
-
-<div class="main-club-li">
-<h4>Отзывы путешественников</h4>
-
-<p>Рассказы туристов, фотогалереи, стихи.</p>
-</div>
-
-<div class="button-holder"><a class="btn btn-contbl">ВОЙТИ</a></div>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="block">
-<h2>Новости круизов</h2>
-
-<div class="main-news-li">
-<div class="news-date">26.08.16</div>
-
-<div class="news-announce">Акция &laquo;Успей купить&raquo;! Круизы на теплоходах &laquo;Константин Коротков&raquo;, &laquo;Нижний Новгород&raquo;, &laquo;Михаил Фрунзе&raquo; со скидкой 20%!</div>
-</div>
-
-<div class="main-news-li">
-<div class="news-date">26.08.16</div>
-
-<div class="news-announce">Акция &laquo;Успей купить&raquo;! Круизы на теплоходах &laquo;Константин Коротков&raquo;, &laquo;Нижний Новгород&raquo;, &laquo;Михаил Фрунзе&raquo; со скидкой 20%!</div>
-</div>
-
-<div class="main-news-li">
-<div class="news-date">26.08.16</div>
-
-<div class="news-announce">Акция &laquo;Успей купить&raquo;! Круизы на теплоходах &laquo;Константин Коротков&raquo;, &laquo;Нижний Новгород&raquo;, &laquo;Михаил Фрунзе&raquo; со скидкой 20%!</div>
-</div>
-
-<div class="button-holder"><a class="btn btn-contbl">РАНЕЕ</a></div>
-</div>
-</div>
-</div>
-
-<div class="row">
-<div class="col-md-12">
-<div class="block main-text">
-<h2>Речные круизы по России и ближайшему зарубежью<br />
-на комфортабельных теплоходах</h2>
-<img alt="Речные круизы Водоход" class="intext-left" src="{{asset('images/maintextphoto.jpg')}}" />
-<p>Организация речных круизов по водным просторам России является основным направлением деятельности нашей компании на протяжении более десяти лет. С 2012 года &laquo;ВодоходЪ&raquo; - крупнейший оператор речных круизов по России. С 2012 года &laquo;ВодоходЪ&raquo; &mdash; это объединенная компания, созданная на основе крупнейших региональных операторов ООО &laquo;ВодоходЪ&raquo; (Москва), ООО &laquo;Волга-Флот-Тур&raquo; (Самара и Нижний Новгород) и ООО &laquo;ВодоходЪ - Санкт-Петербург&raquo; (Санкт-Петербург). Для любителей водных путешествий мы можем предложить широкий спектр маршрутов речных круизов длительностью от 2 до 19 дней, охватывающий почти всю европейскую часть России, с отправлением из Москвы, Санкт-Петербурга, Нижнего Новгорода, Самары и Казани, ведь в управлении компании &mdash; 26 четырехпалубных комфортабельных круизных теплоходов. На борту наших теплоходов мы ежегодно принимаем десятки тысяч российских и иностранных туристов. &laquo;ВодоходЪ&raquo; является туристической компанией полного цикла, то есть объединяет под своим управлением все звенья цепочки обслуживания: разработку маршрутов речных круизов, перевозку, питание, экскурсионное обслуживание, развлекательные программы.</p>
-
-<div style="text-align:center;margin-top:30px;"><a class="btn btn-contred">ПОДОБРАТЬ КРУИЗ</a></div>
-</div>
-</div>
-</div>
-</div>
-
-
-
+{#<h1 id="page_h1"  class="{% if is_granted('ROLE_ADMIN') %} edit-inline {% endif %}">{{page.h1}}</h1>#}
 
 <div class="clearfix" id="page_html"   >{{page.html | raw}}</div>
 {% if is_granted('ROLE_ADMIN') %}<div class="clearfix  edit-inline  " style="display:none;" id="page_body" >{{page.body | raw}}</div>{% endif %}
 
+{% if page.file |length > 0 %}
+<div class="images clearfix">
+{% for image in page.file %}
+	<div class="col-sm-3 admin-thumb" id="image-{{image.id}}">
+		<a class="photo" title="{{ image.title }}" href="{{ (upload_path~image.filename) | imagine_filter('show') }}" rel="group" >
+			<img class="img-responsive" alt="{{ image.title }}" title="{{ image.title }}" src="{{ (upload_path~image.filename) | imagine_filter('my_thumb') }}" />
+		</a>
+	</div>
+{% endfor %}
+</div>
+{% endif %}
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block admin %}
+{% if is_granted("ROLE_ADMIN") %}
+<div class="navbar navbar-inverse ">
+	<div class="navbar-inner">
+        <div class="container">
+			<div class="navbar-form pull-right">
+              <button class="btn btn-contwht" edit="false" id="edit-inline">Быстрая правка</button>
+              <a  href="{{ path('page_edit',{id:page.id}) }}" class="btn btn-contwht"  >Редактировать в админке</a>
+              <a  href="{{ path('page_index') }}" class="btn btn-contwht"  >Админка</a>
+            </div>
+        </div>
+    </div>	
+</div>
+
+<div id="answer" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h2>Страница изменена</h2>
+			</div>	
+			<div class="modal-body">
+				<p></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endif %}
+{% endblock %}
 
 
+
+
+{% block javascripts %}
+{% if is_granted("ROLE_ADMIN") %}
+<script async type="text/javascript" src="/web/bundles/ivoryckeditor/ckeditor.js"></script>
+{% endif %}
+{% endblock %}
+
+{% block javascriptsonload %}
+{% if is_granted("ROLE_ADMIN") %}
+	$('#edit-inline').click(function(){
+		if($(this).attr("edit") == 'false')
+		{
+			$(this).attr("edit",'true');
+			$(this).text("Сохранить");
+			
+			$('#page_html').css({display:"none"});
+			$('.edit-inline').attr('contenteditable','true').css({backgroundColor:"#cfc", display : "block"});
+			//$('.edit-inline').animate({ backgroundColor: "red" },500)
+			CKEDITOR.disableAutoInline = true
+			CKEDITOR.inline("page_body", {"contentsCss":["\/web\/css\/bootstrap.min.css","\/web\/css\/bootstrap-theme.min.css","\/web\/css\/style.css"],"allowedContent":true,"language":"ru","filebrowserBrowseUrl":"\/web\/app_dev.php\/elfinder"});
+		}
+		else 
+		{
+			console.log("сохраняем");
+			//console.log($('#page_title').text());
+			//console.log(CKEDITOR.instances['page_body'].getData());
+			//var data = 'page_title=' + $('#page_title').text() + '&page_body=' + CKEDITOR.instances['page_body'].getData();
+			var data = {'page_h1':$('#page_h1').text() , 'page_body' : CKEDITOR.instances['page_body'].getData() }
+			$.ajax({
+				type: "POST",
+				url: '{{ path('page_ajax_edit',{id:page.id}) }}',
+				data: data,
+				success: function(data, textStatus, jqXHR){
+					//console.log(data);
+					//$('#answer .modal-body').html(data);
+					$('#answer').modal();
+					location.reload();
+
+				},
+				error: function(jqXHR, textStatus){
+					alert(textStatus);
+				}
+			})
+		}
+	});
+{% endif %}	
 {% endblock %}

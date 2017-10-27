@@ -14,8 +14,7 @@ class PageController extends Controller
      */
     public function indexAction()
     {
-		$form = $this->get("cruise_service")->miniFormSearchAction(); 
-		return  array_merge($form, $this->pageAction(""));
+		return  array_merge($this->pageAction(""));
 	}
 
 

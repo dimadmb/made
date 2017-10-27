@@ -4,7 +4,6 @@ imports:
     - { resource: services.yml }
     - { resource: "@BaseBundle/Resources/config/services.yml" }
     - { resource: "@AdminBundle/Resources/config/services.yml" }
-    - { resource: "@CruiseBundle/Resources/config/services.yml" }
     - { resource: "@ForumBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -96,14 +95,6 @@ doctrine:
             #   2. Uncomment database_path in parameters.yml.dist
             #   3. Uncomment next line:
             #     path:     "%database_path%"
-          cruise:
-            driver: pdo_mysql
-            host:     "%database_host%"
-            port:     "%database_port%"			
-            dbname:   "%database_cruise_name%"
-            user:     "%database_cruise_user%"
-            password: "%database_cruise_password%"
-            charset:  UTF8
 
 
     orm:
@@ -117,15 +108,6 @@ doctrine:
                     BaseBundle: ~
                     ForumBundle: ~
 
-            cruise:
-                naming_strategy: doctrine.orm.naming_strategy.underscore
-                connection:       cruise
-                mappings:
-                    CruiseBundle: ~
-                dql:
-                    string_functions:
-                        MONTH: DoctrineExtensions\Query\Mysql\Month
-                        YEAR: DoctrineExtensions\Query\Mysql\Year
 
 #       auto_generate_proxy_classes: "%kernel.debug%"
 #       naming_strategy: doctrine.orm.naming_strategy.underscore
@@ -271,13 +253,15 @@ lsw_memcache:
             entity_manager: default
     # pools
 
-knp_paginator:
-    page_range: 7                     # default page range used in pagination control
-    default_options:
-        page_name: page                # page query parameter name
-        sort_field_name: sort          # sort field query parameter name
-        sort_direction_name: direction # sort direction query parameter name
-        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
-    template:
-        pagination: 'CruiseBundle:Cruise:twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
-        sortable: 'KnpPaginatorBundle:Pagination:sortable_link.html.twig' # sort link template
+# ПАГИНАЦИЯ ТОВАРОВ
+
+#knp_paginator:
+#    page_range: 7                     # default page range used in pagination control
+#    default_options:
+#        page_name: page                # page query parameter name
+#        sort_field_name: sort          # sort field query parameter name
+#        sort_direction_name: direction # sort direction query parameter name
+#        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+#    template:
+#        pagination: 'CruiseBundle:Cruise:twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
+#        sortable: 'KnpPaginatorBundle:Pagination:sortable_link.html.twig' # sort link template

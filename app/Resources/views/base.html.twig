@@ -113,11 +113,11 @@
 
 				<div class="mobmenu-phone">8-800-555-05-05</div>
 			</div>
-			<div class="breadcrumbs">{{render(controller('BaseBundle:BreadCrumbs:index'))}}</div>
+			<div class="breadcrumbs">{#{render(controller('BaseBundle:BreadCrumbs:index'))}#}</div>
 		</div>
 	</div>
 
-	{% block headSearch %} {% endblock %}
+
 	
 	{% if bannerImg is defined %}
 	<div class="top-banner {% block classMain %}  {% endblock %}">
